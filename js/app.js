@@ -5,9 +5,13 @@ const game = {
   tamagotchi: [],
 
   loadScreen(){
+    $('#infobar').hide()
     $askForName = $('<div/>').attr('id', 'askForName');
     $message = $('<p></p>').text("Please enter name for your organism:");
-    $textBox = $('<input/>').attr('size', '20');
+    $textBox = $('<input/>').attr({
+      id: 'nameText',
+      size: '35'
+    });
     $nameButton = $('<button/>').attr('id', 'nameButton').text("Name Selected");
     $askForName.append($message);
     $askForName.append($textBox);
@@ -17,9 +21,9 @@ const game = {
 
   },
 
-  itsAlive(){
+  itsAlive(name){
 
-    this.tamagotchi[experiment] = new Tamagotchi;
+    this.tamagotchi[experiment] = new Tamagotchi(name);
 
   },
 
@@ -28,7 +32,7 @@ const game = {
   setTimer(){
     const timer = setInterval(() => {
       this.time++;
-      $('#age').text(`Organism Age: ${this.age}`);
+      $('#age').text(`Organism Age: ${game.tamagotchi[experiment].age}`);
       $('#timer').text(`Experiment Time: ${this.time}s`);
 
     }, 1000);
@@ -41,10 +45,15 @@ game.loadScreen();
 
 $('main').on('click', function(e){
 
-  if(e.target == $('#nameButton')){
-    
+
+  if(e.target.id == 'nameButton'){
+    $('#infobar').show();
+    $('#askForName').hide();
+    game.itsAlive($('#nameText').val());
+    game.setTimer();
+
   }
 
 
-  
+
 })
