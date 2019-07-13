@@ -6,14 +6,20 @@ const game = {
 
   loadScreen(){
     $askForName = $('<div/>').attr('id', 'askForName');
+    $message = $('<p></p>').text("Please enter name for your organism:");
     $textBox = $('<input/>').attr('size', '20');
+    $nameButton = $('<button/>').attr('id', 'nameButton').text("Name Selected");
+    $askForName.append($message);
     $askForName.append($textBox);
+    $askForName.append($nameButton);
     $('main').append($askForName);
 
 
   },
 
   itsAlive(){
+
+    this.tamagotchi[experiment] = new Tamagotchi;
 
   },
 
@@ -32,3 +38,13 @@ const game = {
 }
 
 game.loadScreen();
+
+$('main').on('click', function(e){
+
+  if(e.target == $('#nameButton')){
+    
+  }
+
+
+  
+})
