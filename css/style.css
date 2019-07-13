@@ -1,3 +1,66 @@
 body{
-	background-color: midnightblue;
+	background-color: black;
+	font-family: 'Special Elite', cursive;
 }
+
+header {
+	color: lime;
+}
+
+main {
+	background-image: url('./images/hazard-back.jpg');
+	height: 500px ;
+	width: 500px;
+}
+
+#askForName {
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+	color: lime;
+}
+
+
